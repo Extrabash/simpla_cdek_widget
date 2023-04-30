@@ -1,1 +1,1 @@
-ALTER TABLE `s_delivery` ADD `module` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `separate_payment`, ADD `settings` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `module`;
+ALTER TABLE `s_delivery` ADD `module` VARCHAR(255) CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `separate_payment`, ADD `settings` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `module`, ADD `js` TEXT CHARACTER SET utf8 COLLATE utf8_general_ci NOT NULL AFTER `settings`;
