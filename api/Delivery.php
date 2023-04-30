@@ -17,7 +17,7 @@ class Delivery extends Simpla
 	public function get_delivery($id)
 	{
 
-		$query = $this->db->placehold("SELECT id, name, description, free_from, price, enabled, position, separate_payment FROM __delivery WHERE id=? LIMIT 1", intval($id));
+		$query = $this->db->placehold("SELECT id, name, description, free_from, price, enabled, position, separate_payment, module, settings FROM __delivery WHERE id=? LIMIT 1", intval($id));
 
 		$this->db->query($query);
 		return $this->db->result();
@@ -31,7 +31,7 @@ class Delivery extends Simpla
 		if(!empty($filter['enabled']))
 			$enabled_filter = $this->db->placehold('AND enabled=?', intval($filter['enabled']));
 
-		$query = "SELECT id, name, description, free_from, price, enabled, position, separate_payment
+		$query = "SELECT id, name, description, free_from, price, enabled, position, separate_payment, module, settings
 					FROM __delivery WHERE 1 $enabled_filter ORDER BY position";
 	
 		$this->db->query($query);
